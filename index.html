@@ -7,33 +7,33 @@
 </head>
 <body>
     <h1>Breast Cancer Prediction</h1>
-    <form action="/predict" method="post">
+    <form action="/predict" method="POST">
         <label for="Clump_thickness">Clump Thickness:</label>
-        <input type="text" id="Clump_thickness" name="Clump_thickness" required><br>
+        <input type="number" id="Clump_thickness" name="Clump_thickness" required><br>
         
         <label for="Uniformity_of_cell_size">Uniformity of Cell Size:</label>
-        <input type="text" id="Uniformity_of_cell_size" name="Uniformity_of_cell_size" required><br>
+        <input type="number" id="Uniformity_of_cell_size" name="Uniformity_of_cell_size" required><br>
         
         <label for="Uniformity_of_cell_shape">Uniformity of Cell Shape:</label>
-        <input type="text" id="Uniformity_of_cell_shape" name="Uniformity_of_cell_shape" required><br>
+        <input type="number" id="Uniformity_of_cell_shape" name="Uniformity_of_cell_shape" required><br>
         
         <label for="Marginal_adhesion">Marginal Adhesion:</label>
-        <input type="text" id="Marginal_adhesion" name="Marginal_adhesion" required><br>
+        <input type="number" id="Marginal_adhesion" name="Marginal_adhesion" required><br>
         
         <label for="Single_epithelial_cell_size">Single Epithelial Cell Size:</label>
-        <input type="text" id="Single_epithelial_cell_size" name="Single_epithelial_cell_size" required><br>
+        <input type="number" id="Single_epithelial_cell_size" name="Single_epithelial_cell_size" required><br>
         
         <label for="Bare_nuclei">Bare Nuclei:</label>
-        <input type="text" id="Bare_nuclei" name="Bare_nuclei" required><br>
+        <input type="number" id="Bare_nuclei" name="Bare_nuclei" required><br>
         
         <label for="Bland_chromatin">Bland Chromatin:</label>
-        <input type="text" id="Bland_chromatin" name="Bland_chromatin" required><br>
+        <input type="number" id="Bland_chromatin" name="Bland_chromatin" required><br>
         
         <label for="Normal_nucleoli">Normal Nucleoli:</label>
-        <input type="text" id="Normal_nucleoli" name="Normal_nucleoli" required><br>
+        <input type="number" id="Normal_nucleoli" name="Normal_nucleoli" required><br>
         
         <label for="Mitoses">Mitoses:</label>
-        <input type="text" id="Mitoses" name="Mitoses" required><br>
+        <input type="number" id="Mitoses" name="Mitoses" required><br>
         
         <input type="submit" value="Predict">
     </form>

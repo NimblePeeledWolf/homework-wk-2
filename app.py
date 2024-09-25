@@ -2,8 +2,15 @@ from flask import Flask, request, render_template
 import pickle
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from ucimlrepo import fetch_ucirepo
 
 app = Flask(__name__)
+
+
+breast_cancer_wisconsin_original = fetch_ucirepo(id=15)
+
+x = breast_cancer_wisconsin_original.data.features
+y = breast_cancer_wisconsin_original.data.targets
 
 # Load the model
 with open('svm_model.pkl', 'rb') as model_file:
