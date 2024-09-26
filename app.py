@@ -13,8 +13,8 @@ x = breast_cancer_wisconsin_original.data.features
 y = breast_cancer_wisconsin_original.data.targets
 
 # Load the model
-with open('svm_model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
+with open('svm_model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 
 scaler = StandardScaler()  
