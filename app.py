@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 import pickle
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from ucimlrepo import fetch_ucirepo
 
