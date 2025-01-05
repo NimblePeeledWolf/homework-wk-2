@@ -14,12 +14,16 @@ breast_cancer_wisconsin_original = fetch_ucirepo(id=15)
 x = breast_cancer_wisconsin_original.data.features
 y = breast_cancer_wisconsin_original.data.targets
 
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=42)
+
+scaler = StandardScaler()
+x_train_scaled = scaler.fit_transform(x_train)
+x_test_scaled = scaler.fit_transform(x_test)
+
 # Load the model
 with open('svm_model.pkl', 'rb') as file:
     model = pickle.load(file)
-
-
-scaler = StandardScaler()  
+ 
 
 @app.route('/')
 def index():
@@ -48,7 +52,7 @@ def predict():
     
     # Return result
     result = "Malignant" if prediction[0] == 4 else "Benign"
-    return render_template('index.html', result=f'Prediction: {result}')
+    return render_template('index.html', result=f'prediction: {result}')
 
 if __name__ == '__main__':
     app.run(debug=True)
