@@ -20,9 +20,12 @@ scaler = StandardScaler()
 x_train_scaled = scaler.fit_transform(x_train)
 x_test_scaled = scaler.fit_transform(x_test)
 
-# Load the model
+# Load the model and scaler
 with open('svm_model.pkl', 'rb') as file:
     model = pickle.load(file)
+
+with open('scaler.pkl', 'rb') as file:
+    scaler = pickle.load(file)
  
 
 @app.route('/')
@@ -52,7 +55,7 @@ def predict():
     
     # Return result
     result = "Malignant" if prediction[0] == 4 else "Benign"
-    return render_template('index.html', result=f'prediction: {result}')
+    return render_template('index.html', prediction = result)
 
 if __name__ == '__main__':
     app.run(debug=True)
